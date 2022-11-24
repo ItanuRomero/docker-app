@@ -10,3 +10,7 @@ docker-compose up --build --force-recreate
 
 dockerd
 docker-compose up --build --force-recreate
+
+# When production:
+
+docker-compose -f docker-compose.production.yml up --build --force-recreate
