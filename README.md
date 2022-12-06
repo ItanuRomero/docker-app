@@ -26,4 +26,4 @@ Then run the docker-compose build:
 - docker-compose -f docker-compose.production.yml up --build --force-recreate
 
 If you want to deploy it with replicas:
-docker stack deploy -c docker-compose.production.yml docker-app
+- docker stack deploy -c docker-compose.production.yml docker-app
