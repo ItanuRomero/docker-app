@@ -3,7 +3,21 @@ version: '3'
 services:
   app:
     image: docker-next-prod
-    build: 
+    build:
+      context: .
       dockerfile: Dockerfile.production
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
     ports:
-      - 3000:3000
+      - 3000-3010:3000
+    networks:
+      - webserver
+
+networks:
+  webserver:
